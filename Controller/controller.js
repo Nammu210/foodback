@@ -18,7 +18,7 @@ const Signin = async (req, res) => {
 
   const hashPass = bcrypt.hashSync(password, 10);
 
-  const token = jwt.sign({ email: email }, SECRET_KEY, { expiresIn: "3D" });
+  const token = jwt.sign({ email: email }, SECRET_KEY, { expiresIn: "15D" });
 
   const tempObj = new User({
     email: email,

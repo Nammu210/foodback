@@ -5,7 +5,7 @@ const {
   checkLoggedIn,
   logOut,
 } = require("../Controller/controller");
-// const auth=require('../middleware/auth')
+
 route.post("/Signin", Signin);
 
 route.post("/login", Login);
