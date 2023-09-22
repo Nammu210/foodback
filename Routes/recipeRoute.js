@@ -1,15 +1,13 @@
 const {
   bookRecipe,
-  deleteSavedRecipe,
   fetchSavedRecipe,
-  UserDetailsData,
+
 } = require("../Controller/RecipeFile");
 
 const recipeRoute = require("express").Router();
 
-recipeRoute.put("/saverecipe", bookRecipe);
-recipeRoute.put("/deleterecipe", deleteSavedRecipe);
-recipeRoute.get("/fetchrecipe", fetchSavedRecipe);
-recipeRoute.get("/userdetails", UserDetailsData);
+recipeRoute.post("/saverecipe", bookRecipe);
+recipeRoute.get("/fetchrecipe/:email", fetchSavedRecipe);
+
 
 module.exports = recipeRoute;

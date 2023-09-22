@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connect = require("./DB/mongooseDb");
-const userdbroute = require("./Routes/userdbroute");
+
 const route = require("./Routes/route");
 const recipeRoute = require("./Routes/recipeRoute");
 dotenv.config();
@@ -14,8 +14,8 @@ const corsOption = {
 };
 app.use(cors(corsOption));
 
-app.use("/userdata", userdbroute);
-app.use("/user",route)
+
+app.use("/userdata",route)
 app.use('/recipe',recipeRoute)
 
 app.get("/", (req, res) => {
